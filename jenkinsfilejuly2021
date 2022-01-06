@@ -1,4 +1,4 @@
-node{
+node('nodes'){
   
   def mavenHome = tool name :"maven 3.8.2" 
 
@@ -9,11 +9,11 @@ node{
   stage('Build'){
    sh "${mavenHome}/bin/mvn clean package"
   }
-  
+ /* 
   stage('SonafrQubeReport'){
    sh "${mavenHome}/bin/mvn clean sonar:sonar"
   } 
-/*
+
   stage('UploadArtifactIntoNexus'){
    sh "${mavenHome}/bin/mvn clean deploy"
   }
